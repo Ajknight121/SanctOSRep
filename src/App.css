@@ -102,13 +102,13 @@ ul {
   height: clamp(1em, 10vw, 175px);
   width: clamp(1em, 10vw, 175px);
   border: 1px solid var(--ui-primary-dark);
-  border-radius: 30px;
+  border-radius: var(--border-radius-med);
 }
 
 .creature-headshot > img {
   width: 100%;
   height: 100%;
-  border-radius: 30px;
+  border-radius: var(--border-radius-med);
 }
 
 .creature-label {
@@ -133,7 +133,7 @@ ul {
   height: 33vw;
   /* min-height: 600px; */
   background: rgb(130, 190, 227, 0.9);
-  border-radius: 35px;
+  border-radius: var(--border-radius-med);
 }
 
 .sn-detail {
@@ -142,7 +142,7 @@ ul {
   font-size: 1vw;
   text-wrap: nowrap;
   background: none;
-  margin-left: 40px;
+  margin-left: 3vw;
   color: var(--ui-primary-dark);
 }
 
@@ -150,7 +150,7 @@ ul {
   display: inline;
   background-color: var(--ui-primary-dark);
   color: white;
-  border-radius: 5px;
+  border-radius: 0.4vw;
   padding: 0px 4px;
 }
 
