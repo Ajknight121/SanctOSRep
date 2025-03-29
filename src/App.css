@@ -1,0 +1,245 @@
+#root {
+  margin: 0 auto;
+}
+
+h2 {
+  /* font-size: 80px; */
+  font-size: 4vw;
+  margin: 0;
+}
+
+ul {
+  padding-left: 3vw;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.inline {
+  display: inline;
+  height: fit-content;
+}
+
+.page {
+  box-sizing: border-box;
+  /* padding-top: 120px; */
+  padding-top: 8.4vw;
+  height: 100%;
+  width: 100%;
+  background-image: url("./images/blue-sky.png");
+  /* object-fit: cover; */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.header {
+  height: 10vw;
+  width: 90%; /* was 60% of background ui */
+  margin: auto;
+}
+
+.header-title-group {
+  height: 4vw;
+  /* position: relative;
+  top: -1.9vw;
+  right: 1.5vw;
+  width: fit-content; */
+}
+
+.header-logo {
+  display: flex;
+  width: 65%;
+  gap: 25px;
+}
+
+.header-route {
+  position: relative;
+  left: -56%;
+  top: -45%;
+}
+
+.self-center {
+  align-self: center;
+}
+
+.content {
+  position: relative;
+  /* margin-top: 140px; */
+  margin-top: 8vw;
+  z-index: 1;
+}
+
+.creatures {
+  width: 35%;
+
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  color: var(--ui-secondary-dark);
+  gap: 21px;
+  margin: 0 10vw 0 auto;
+}
+
+.creature-headshots {
+  position: absolute;
+  /* top: -200px; */
+  top: -15vw;
+  align-self: end;
+  justify-self: end;
+  gap: 16px;
+}
+
+.creature-headshot {
+  /* height: 175px;
+  width: 175px; */
+  height: clamp(1em, 10vw, 175px);
+  width: clamp(1em, 10vw, 175px);
+  border: 1px solid var(--ui-primary-dark);
+  border-radius: 30px;
+}
+
+.creature-headshot > img {
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+}
+
+.creature-label {
+  font-size: 2.2vw;
+  font-weight: 600;
+}
+
+.creature-large {
+  width: 100%;
+  height: 100%;
+}
+
+.creature-large > img {
+  width: 100%;
+  height: auto;
+}
+
+.avatar-display {
+  /* width: 320px; */
+  width: 18.5%;
+  /* height: 620px; */
+  height: 33vw;
+  /* min-height: 600px; */
+  background: rgb(130, 190, 227, 0.9);
+  border-radius: 35px;
+}
+
+.sn-detail {
+  position: relative;
+  top: -2vw;
+  font-size: 1vw;
+  text-wrap: nowrap;
+  background: none;
+  margin-left: 40px;
+  color: var(--ui-primary-dark);
+}
+
+.sn-value {
+  display: inline;
+  background-color: var(--ui-primary-dark);
+  color: white;
+  border-radius: 5px;
+  padding: 0px 4px;
+}
+
+.sn-label {
+  font-size: 2.2vw;
+  font-weight: 600;
+}
+
+.menu {
+  width: 34.5%;
+}
+
+.nav-menu {
+  margin-top: 2vw;
+  margin-bottom: 0;
+}
+
+.nav-option {
+  vertical-align: bottom;
+  position: relative;
+  /* height: 65px; */
+  height: 4vw;
+  width: 65%;
+  background: none;
+  /* font-size: 45px; */
+  font-size: 3vw;
+  font-weight: bold;
+  list-style: none;
+  border: 2px solid rgb(150, 160, 230, 80);
+  border-radius: 1.3vw;
+  /* margin-bottom: 14px; */
+  margin-bottom: 0.6vw;
+  color: var(--ui-font-color);
+}
+
+.nav-option-ext {
+  width: 85%;
+}
+
+.nav-option::before {
+  content: "";
+  position: absolute;
+  top: -1.9vw;
+  left: -2.1vw;
+  width: 3vw;
+  height: 3vw;
+  background-image: url("./images/Star-black.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.nav-menu-description {
+  font-size: 1vw;
+  color: var(--ui-primary-dark);
+}
+
+.sub-menu {
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  /* height: 100%; */
+  margin-top: 3vw;
+}
+
+.background {
+  position: absolute;
+  /* top: 140px; */
+  top: 9.5vw;
+  left: 0;
+  right: 0;
+  /* bottom: 0; */
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* @media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+} */
