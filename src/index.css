@@ -16,6 +16,7 @@
   --ui-secondary-dark: rgb(25,50,200, .50);
   --ui-primary-light: rgb(235,241,255,.90);
   --ui-font-color: rgb(147, 164,224, .70);
+  --ui-hightlight-dark: rgba(143, 143, 143, 0.40);
   --border-radius-med: 2.7vw;
   --border-radius-small: 0.4vw;
 }
