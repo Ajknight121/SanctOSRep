@@ -31,12 +31,18 @@ ul {
 }
 
 .video-player {
+  position: absolute;
   width: 100vw;
   height: 80vh;
   z-index: -6;
-  /* pointer-events: none; */
-  opacity: 10;
 }
+
+.video-player.hide {
+  pointer-events: none;
+  opacity: 0;
+}
+
+
 
 .media-control {
   background-color: aqua;
@@ -51,14 +57,29 @@ ul {
 }
 
 .progress-bar {
+  display: flex;
+  flex-direction: row;
   background-color: white;
   width: 80%;
   height: 15px;
+  flex-shrink: 0;
+  position: relative;
+}
+.timestamp {
+  position: absolute;
+  z-index: 2;
+  width: 2px;
+  height: 20px;
+  flex-shrink: 0;
+  background-color: yellow;
 }
 
 .current-progress {
+  position: absolute;
   background-color: red;
   height: 100%;
+  flex-shrink: 0;
+  z-index: 1;
 }
 
 .page {
