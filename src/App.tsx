@@ -9,9 +9,14 @@ import cloudCreatures from "./images/cloud-creatures.png";
 import bbHeadshot from "./images/bb-headshot.png";
 import ccHeadshot from "./images/cc-headshot.png";
 
+import { useRef } from "react";
+import MediaControl from "./MediaControl"
 function App() {
+  
   return (
     <div className="page">
+      
+      
       <div className="header col">
         <div className="header-logo">
           <img src={logoColon} width={"33%"}/>
@@ -62,6 +67,7 @@ function App() {
           </div>
         </div>
       </div>
+      <MediaControl/>
       <div className="background">
         <img className="background-svg" src={background} width={"90%"} />
       </div>

@@ -12,6 +12,10 @@ ul {
   padding-left: 3vw;
 }
 
+.absolute {
+  position:absolute;
+}
+
 .row {
   display: flex;
   flex-direction: row;
@@ -24,6 +28,37 @@ ul {
 .inline {
   display: inline;
   height: fit-content;
+}
+
+.video-player {
+  width: 100vw;
+  height: 80vh;
+  z-index: -6;
+  /* pointer-events: none; */
+  opacity: 10;
+}
+
+.media-control {
+  background-color: aqua;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 5;
+  flex-shrink: none;
+}
+
+.progress-bar {
+  background-color: white;
+  width: 80%;
+  height: 15px;
+}
+
+.current-progress {
+  background-color: red;
+  height: 100%;
 }
 
 .page {
