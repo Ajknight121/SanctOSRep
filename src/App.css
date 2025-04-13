@@ -91,6 +91,7 @@ ul {
 }
 
 .current-progress {
+  pointer-events: none;
   position: absolute;
   background-color: red;
   height: 100%;
@@ -110,7 +111,7 @@ ul {
   background-position: center;
   aspect-ratio: 2 / 1;
   max-height: 80%;
-  background-image: url("./images/blue-sky.png");
+  background-image: url("/images/blue-sky.png");
 }
 
 .background {
@@ -131,8 +132,6 @@ ul {
   width: 90%; /* was 60% of background ui */
   margin: auto;
 }
-
-
 
 .header-logo {
   position: relative;
@@ -226,6 +225,30 @@ ul {
   background: rgb(130, 190, 227, 0.9);
   border-radius: var(--border-radius-med);
 }
+.avatar-wrapper {
+  display: flex;
+  place-content: center;
+  position: relative;
+  bottom: 10%;
+  height: 110%;
+  overflow: hidden;
+}
+.avatar {
+  position: relative;
+  bottom: 0;
+  height: clamp(100px, 40vw, 550px);
+  animation: floatUpAndDown 8s infinite alternate ease-in-out;
+}
+
+@keyframes floatUpAndDown {
+  0%,
+  100% {
+    bottom: 0;
+  }
+  50% {
+    bottom: -5%;
+  }
+}
 
 .sn-detail {
   position: relative;
@@ -296,7 +319,7 @@ ul {
   left: clamp(-20px, -2.1vw, 5px);
   width: clamp(5px, 3vw, 30px);
   height: clamp(5px, 3vw, 30px);
-  background-image: url("./images/Star.svg");
+  background-image: url("/images/Star.svg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;

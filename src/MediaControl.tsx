@@ -46,8 +46,9 @@ export default function MediaControl() {
           minutes = Number(timesection[1]);
           hours = Number(timesection[0]);
         }
-        console.log(hours, minutes, seconds);
-        console.log(duration);
+        // console.log(hours, minutes, seconds);
+        // console.log(duration);
+        // console.log(sanctuaryTimestamps)
         const totalSeconds = hours * 3600 + minutes * 60 + seconds;
 
         return {

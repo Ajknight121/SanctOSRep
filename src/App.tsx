@@ -1,11 +1,11 @@
 import "./App.css";
 
-import logoColon from "./images/Logo-colon.svg";
-import logoTitle from "./images/LogoTitle.svg";
-import background from "./images/ui-background.svg";
-import cloudCreatures from "./images/cloud-creatures.png";
-import bbHeadshot from "./images/bb-headshot.png";
-import ccHeadshot from "./images/cc-headshot.png";
+import logoColon from "/images/Logo-colon.svg";
+import logoTitle from "/images/LogoTitle.svg";
+import background from "/images/ui-background.svg";
+import cloudCreatures from "/images/cloud-creatures.png";
+import bbHeadshot from "/images/bb-headshot.png";
+import ccHeadshot from "/images/cc-headshot.png";
 
 import { useEffect, useState } from "react";
 import ReactPlayer from "react-player/youtube";
@@ -17,11 +17,17 @@ import Settings from "./components/Settings";
 import Memory from "./components/Memory";
 import Games from "./components/Games";
 
+import mrWashee from "/images/Mr._Washee_Washee.png";
+import girl1 from "/images/girl1.png"
+import girl2 from "/images/girl2.png"
+
 function App() {
   const { playerRef, showVideo, playing } = useVideoPlayer();
   const [mode, setMode] = useState("");
   const [note, setNote] = useState("");
   const [menuDesc, setMenuDesc] = useState("Welcome to Sactuary OS!")
+  const [avatar, setAvatar] = useState("girl1");
+  const [bg, setBg] = useState("/images/blue-sky.png")
 
   useEffect(() => {
     const savedNote = localStorage.getItem('note')
@@ -29,6 +35,11 @@ function App() {
       setNote(savedNote)
     }
   }, [])
+
+  const handleSetAvatar = (choice:string) => {
+    console.log(choice)
+    setAvatar(choice);
+  }
 
   const handleSetNote = (newNote: string) => {
     // Update the current text
@@ -49,7 +60,7 @@ function App() {
   };
 
   return (
-    <div className="page">
+    <div style={{backgroundImage: `url(${bg})`}} className="page">
       <div className="background">
         <img className="background-svg" src={background} width={"90%"} />
       </div>
@@ -81,7 +92,13 @@ function App() {
         </div>
       </div>
       <div className="content row">
-        <div className="avatar-display"></div>
+        <div className="avatar-display">
+          <div className="avatar-wrapper">
+            {avatar == "mrwashee" ? <img className="avatar" src={mrWashee} /> : ""}
+            {avatar == "girl1" ? <img className="avatar" src={girl1} /> : ""}
+            {avatar == "girl2" ? <img className="avatar" src={girl2} /> : ""}
+          </div>
+        </div>
         <div className="menu col">
           <div className="sn-detail row inline">
             SN. <div className="sn-value">123456789-Ajknight</div>
@@ -144,7 +161,7 @@ function App() {
             {mode == "" ? (<img src={cloudCreatures} width={"100%"} height={"auto"}/>): ""}
             {mode == "games" ? <Games />: ""}
             {mode == "memory" ? <Memory />: ""}
-            {mode == "settings" ? <Settings />: ""}
+            {mode == "settings" ? <Settings avatar={avatar} setAvatar={handleSetAvatar} bg={bg} setBg={setBg}/>: ""}
             {mode == "notepad" ? <Notepad note={note} setNote={handleSetNote} />: ""}
             {mode == "credits" ? <Credits />: ""}
           </div>
