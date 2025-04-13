@@ -9,18 +9,37 @@ import cloudCreatures from "./images/cloud-creatures.png";
 import bbHeadshot from "./images/bb-headshot.png";
 import ccHeadshot from "./images/cc-headshot.png";
 
-import { useRef } from "react";
-import MediaControl from "./MediaControl"
+import { useContext, useRef } from "react";
+import ReactPlayer from "react-player/youtube";
+import MediaControl from "./MediaControl";
+import {useVideoPlayer} from "./VideoContext";
+import React from "react";
+import TimeStamp from "./TimeStamp";
+
 function App() {
   
+  const {playerRef, showVideo, playing} = useVideoPlayer();
+
   return (
     <div className="page">
-      
-      
+      <div className={`video-player ${showVideo ? "" : "hide"}`}>
+        <ReactPlayer
+          muted={false}
+          url={"https://youtu.be/d3KfkKXRDzk"}
+          width={"100%"}
+          height={"100%"}
+          volume={0.06}
+          controls={true}
+          playing={playing}
+          loop={true}
+          ref={playerRef}
+        />
+      </div>
+
       <div className="header col">
         <div className="header-logo">
-          <img src={logoColon} width={"33%"}/>
-          <img src={logoTitle} width={"66%"} height={"120%"}/>
+          <img src={logoColon} width={"33%"} />
+          <img src={logoTitle} width={"66%"} height={"120%"} />
           {/* <h1>DUSQK:</h1> */}
         </div>
 
@@ -43,9 +62,9 @@ function App() {
             <li className="nav-option">SETTINGS</li>
             <li className="nav-option nav-option-ext">MEM.CARD</li>
             <li className="nav-option">NOTEPAD</li>
-          <div className="nav-menu-description">
-            This is a description of the highlighted menu option
-          </div>
+            <div className="nav-menu-description">
+              This is a description of the highlighted menu option
+            </div>
           </ul>
           <ul className="sub-menu">
             <li className="nav-option">CREDITS</li>
@@ -54,11 +73,11 @@ function App() {
         <div className="creatures">
           <div className="creature-headshots row">
             <div className="creature-headshot">
-              <img src={bbHeadshot}/>
+              <img src={bbHeadshot} />
               <div className="creature-label">BB*</div>
             </div>
             <div className="creature-headshot">
-              <img src={ccHeadshot}/>
+              <img src={ccHeadshot} />
               <label className="creature-label">CC*</label>
             </div>
           </div>
@@ -67,7 +86,7 @@ function App() {
           </div>
         </div>
       </div>
-      <MediaControl/>
+      <MediaControl player={playerRef} />
       <div className="background">
         <img className="background-svg" src={background} width={"90%"} />
       </div>
