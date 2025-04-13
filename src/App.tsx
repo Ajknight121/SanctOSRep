@@ -114,7 +114,7 @@ function App() {
             </li>
             <li
               className={`nav-option ${mode == "settings" && "selected"}`}
-              onClick={() => handleMenuSelect("settings", "Customize your OS to be your sactuary")}
+              onClick={() => handleMenuSelect("settings", "Customize your OS to be your sanctuary")}
             >
               SETTINGS
             </li>
