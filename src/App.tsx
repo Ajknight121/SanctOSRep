@@ -52,7 +52,7 @@ function App() {
   const handleMenuSelect = (option:string, desc:string) => {
     if (mode == option) {
       setMode("");
-      setMenuDesc("Welcome to Sactuary OS!")
+      setMenuDesc("Welcome to Sactuary OS! Press play below to hear the music!")
     } else {
       setMode(option);
       setMenuDesc(desc)

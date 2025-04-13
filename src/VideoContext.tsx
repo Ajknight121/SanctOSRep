@@ -16,7 +16,7 @@ export const VideoPlayerContext = createContext(undefined);
 export function VideoPlayerProvider({ children }: { children: ReactNode }) {
   const playerRef = useRef<HTMLElement>(null);
   const [showVideo, setShowVideo] = useState(false);
-  const [playing, setPlaying] = useState(true);
+  const [playing, setPlaying] = useState(false);
 
   
 
