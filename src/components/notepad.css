@@ -49,4 +49,5 @@
   border-radius: var(--border-radius-med);
   color: black;
   border: 2px solid rgb(150, 160, 230, 80);
+  overflow-y: scroll;
 }

@@ -42,7 +42,7 @@ function App() {
     localStorage.setItem('note', newNote)
   }
 
-  const handleMenuSelect = (option, desc) => {
+  const handleMenuSelect = (option:string, desc:string) => {
     if (mode == option) {
       setMode("");
       setMenuDesc("Welcome to Sactuary OS!")

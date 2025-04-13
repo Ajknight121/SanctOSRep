@@ -304,6 +304,7 @@ ul {
 
 .nav-menu-description {
   width: 59%;
+  height: clamp(10px, 2vw, 30px);
   font-size: clamp(5px, 1vw, 10px);
   color: var(--ui-primary-dark);
 }
