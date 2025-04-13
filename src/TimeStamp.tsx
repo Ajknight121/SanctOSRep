@@ -1,5 +1,4 @@
-import React from 'react'
-import { TimeStampProps } from './MediaControl'
+import { TimeStampProps } from './VideoContext'
 
 export default function TimeStamp({timePercent, name}: TimeStampProps) {
   return (

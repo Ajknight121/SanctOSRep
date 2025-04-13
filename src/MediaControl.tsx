@@ -1,19 +1,16 @@
-import React, { createContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { TimeStampProps, useVideoPlayer } from "./VideoContext";
-import ReactPlayer from "react-player/youtube";
-import { useRef } from "react";
 import TimeStamp from "./TimeStamp";
 
-export const playerContext = createContext(null);
 
 export default function MediaControl() {
-  const {playerRef, showVideo, setShowVideo, playing,setPlaying} = useVideoPlayer();
+  const { playerRef, showVideo, setShowVideo, playing, setPlaying } =
+    useVideoPlayer();
   const [duration, setDuration] = useState(1);
   const [currentProgress, setCurrentProgress] = useState(0);
-  const [changed, setChanged] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
   const [clickPosition, setClickPosition] = useState(0);
-  
+
   const [timestamps, setTimestamps] = useState([] as TimeStampProps[]);
 
   const sanctuaryTimestamps = [
@@ -67,34 +64,38 @@ export default function MediaControl() {
     return () => {};
   }, [duration]);
 
-  const handleMouseDown = (e) => {
-    setIsDragging(true);
-    const rect = e.target.getBoundingClientRect();
-    const mouseX = e.clientX - rect.left;
-    const mousePercent = (mouseX / rect.width) * 100;
-    setClickPosition(mousePercent);
+  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.target instanceof HTMLElement) {
+      setIsDragging(true);
+      const rect = e.target.getBoundingClientRect();
+      const mouseX = e.clientX - rect.left;
+      const mousePercent = (mouseX / rect.width) * 100;
+      setClickPosition(mousePercent);
+    }
   };
 
   const handleMouseUp = () => {
     setIsDragging(false);
   };
 
-  const handleMouseMove = (e) => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!playerRef.current) {
       return;
     }
     if (!isDragging) return;
 
-    const rect = e.target.getBoundingClientRect();
-    const mouseX = e.clientX - rect.left;
-    const mousePercent = (mouseX / rect.width) * 100;
+    if (e.target instanceof HTMLElement) {
+      const rect = e.target.getBoundingClientRect();
+      const mouseX = e.clientX - rect.left;
+      const mousePercent = (mouseX / rect.width) * 100;
 
-    // Update the player time based on the click position
-    const currentTime = (mousePercent / 100) * duration;
-    playerRef.current.seekTo(currentTime);
-    console.log("set");
-    // Update the progress state
-    setCurrentProgress(mousePercent);
+      // Update the player time based on the click position
+      const currentTime = (mousePercent / 100) * duration;
+      playerRef.current.seekTo(currentTime);
+      console.log("set");
+      // Update the progress state
+      setCurrentProgress(mousePercent);
+    }
   };
 
   useEffect(() => {
@@ -118,14 +119,14 @@ export default function MediaControl() {
     }, 500); // Run every 500ms (half second)
 
     return () => clearInterval(intervalId);
-  }, [changed, isDragging, playerRef]);
+  }, [isDragging, playerRef]);
 
   const handlePlayToggle = () => {
     setPlaying((prev: boolean) => !prev);
   };
 
   const handleShowPlayer = () => {
-    setShowVideo((prev:boolean) => !prev);
+    setShowVideo((prev: boolean) => !prev);
   };
 
   return (
@@ -137,7 +138,11 @@ export default function MediaControl() {
         onMouseUp={handleMouseUp}
       >
         {timestamps.map((stamp, index) => (
-          <TimeStamp key={"time-" + index} name={stamp.name} timePercent={stamp.timePercent} />
+          <TimeStamp
+            key={"time-" + index}
+            name={stamp.name}
+            timePercent={stamp.timePercent}
+          />
         ))}
         <div
           className="current-progress"

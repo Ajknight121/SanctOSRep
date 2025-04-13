@@ -1,14 +1,8 @@
-import React, { useState } from 'react'
 import "./notepad.css"
 
-type Note = {
-  title: string;
-  body: string;
-}
-
-export default function Notepad({note, setNote}) {
-  const [notes, setNotes] = useState<Note[]>([])
-  const [currentText, setCurrentText] = useState<string>("")
+export default function Notepad({note, setNote}: {note:string, setNote: (value:string) => void}) {
+  // const [notes, setNotes] = useState<Note[]>([])
+  // const [currentText, setCurrentText] = useState<string>("")
 
   return (
     <div className='section notepad'>

@@ -1,6 +1,5 @@
 import {
   useState,
-  useEffect,
   useContext,
   createContext,
   useRef,
@@ -12,7 +11,7 @@ export type TimeStampProps = {
   name: string;
 };
 
-export const VideoPlayerContext = createContext();
+export const VideoPlayerContext = createContext(undefined);
 
 export function VideoPlayerProvider({ children }: { children: ReactNode }) {
   const playerRef = useRef<HTMLElement>(null);

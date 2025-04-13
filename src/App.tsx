@@ -1,7 +1,5 @@
 import "./App.css";
 
-import star from "./images/Star-black.svg";
-import logo from "./images/logo.svg";
 import logoColon from "./images/Logo-colon.svg";
 import logoTitle from "./images/LogoTitle.svg";
 import background from "./images/ui-background.svg";
@@ -9,12 +7,10 @@ import cloudCreatures from "./images/cloud-creatures.png";
 import bbHeadshot from "./images/bb-headshot.png";
 import ccHeadshot from "./images/cc-headshot.png";
 
-import { useContext, useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import ReactPlayer from "react-player/youtube";
 import MediaControl from "./MediaControl";
 import { useVideoPlayer } from "./VideoContext";
-import React from "react";
-import TimeStamp from "./TimeStamp";
 import Notepad from "./components/Notepad";
 import Credits from "./components/Credits";
 import Settings from "./components/Settings";
@@ -154,7 +150,7 @@ function App() {
           </div>
         </div>
       </div>
-      <MediaControl player={playerRef} />
+      <MediaControl />
       
     </div>
   );
