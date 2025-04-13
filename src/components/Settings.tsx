@@ -13,7 +13,8 @@ export default function Settings({avatar, setAvatar, bg, setBg}) {
   const background = [
     { label: 'Day', value: "/images/blue-sky.png" },
     { label: 'aurora', value: "/images/aurora.jpg" },
-    { label: 'Water', value: '/images/water.jpg' }
+    { label: 'Water', value: '/images/water.jpg' },
+    { label: 'unpleasant', value: '/images/unpleasant.png' }
   ]
 
   const ui = [
