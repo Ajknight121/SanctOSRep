@@ -25,7 +25,7 @@ export default function Memory() {
 
   return (
     <div className='section settings'>
-      <div className='section-header'>Memory Card</div>
+      <div className='section-header'>MEMORY CARD</div>
       <div className='section-container'>
         <div>Searching for memory card{dots}</div>
       </div>

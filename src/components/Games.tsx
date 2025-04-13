@@ -25,7 +25,7 @@ export default function Games() {
 
   return (
     <div className='section settings'>
-      <div className='section-header'>Games</div>
+      <div className='section-header'>GAMES</div>
       <div className='section-container'>
         <div>Searching for games{dots}</div>
       </div>

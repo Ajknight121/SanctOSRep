@@ -12,7 +12,7 @@ export default function Notepad({note, setNote}) {
 
   return (
     <div className='section notepad'>
-      <div className='section-header'>Notepad</div>
+      <div className='section-header'>NOTEPAD</div>
       <div className='section-container note-input-container'>
         <textarea 
           className='note-input' 

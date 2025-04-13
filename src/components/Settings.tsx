@@ -18,7 +18,7 @@ export default function Settings() {
 
   return (
     <div className='section settings'>
-      <div className='section-header'>Settings</div>
+      <div className='section-header'>SETTINGS</div>
       <div className='section-container'>
         <div>Background Image</div>
         <select value={selectedTheme} onChange={(e) => setSelectedTheme(e.target.value)}>

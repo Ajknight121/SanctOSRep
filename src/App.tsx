@@ -9,7 +9,7 @@ import cloudCreatures from "./images/cloud-creatures.png";
 import bbHeadshot from "./images/bb-headshot.png";
 import ccHeadshot from "./images/cc-headshot.png";
 
-import { useContext, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import ReactPlayer from "react-player/youtube";
 import MediaControl from "./MediaControl";
 import { useVideoPlayer } from "./VideoContext";
@@ -25,12 +25,30 @@ function App() {
   const { playerRef, showVideo, playing } = useVideoPlayer();
   const [mode, setMode] = useState("");
   const [note, setNote] = useState("");
+  const [menuDesc, setMenuDesc] = useState("Welcome to Sactuary OS!")
 
-  const handleMenuSelect = (option) => {
+  useEffect(() => {
+    const savedNote = localStorage.getItem('note')
+    if (savedNote) {
+      setNote(savedNote)
+    }
+  }, [])
+
+  const handleSetNote = (newNote: string) => {
+    // Update the current text
+    setNote(newNote)
+
+    // Save to localStorage
+    localStorage.setItem('note', newNote)
+  }
+
+  const handleMenuSelect = (option, desc) => {
     if (mode == option) {
       setMode("");
+      setMenuDesc("Welcome to Sactuary OS!")
     } else {
       setMode(option);
+      setMenuDesc(desc)
     }
   };
 
@@ -56,14 +74,13 @@ function App() {
       <div className="header col">
         <div className="header-logo">
           <img src={logoColon} width={"33%"} />
-          <img src={logoTitle} width={"66%"} height={"120%"} />
+          <img className="logo-os" src={logoTitle} width={"66%"} height={"120%"} />
           {/* <h1>DUSQK:</h1> */}
         </div>
 
         <div className="header-title-group col self-center">
-          {/* <h1>Sanctuary OS</h1> */}
           <div className="header-route">
-            <h2>{"->"} menu</h2>
+            {"->"} menu
           </div>
         </div>
       </div>
@@ -72,18 +89,18 @@ function App() {
         <div className="menu col">
           <div className="sn-detail row inline">
             SN. <div className="sn-value">123456789-Ajknight</div>
-            <div className="sn-label">Select*</div>
+            <div className="sn-label">Select* {">>"}</div>
           </div>
           <ul className="nav-menu">
             <li
               className={`nav-option ${mode == "games" && "selected"}`}
-              onClick={() => handleMenuSelect("games")}
+              onClick={() => handleMenuSelect("games", "Play games with your pets and custom avatar!")}
             >
               GAMES
             </li>
             <li
               className={`nav-option ${mode == "settings" && "selected"}`}
-              onClick={() => handleMenuSelect("settings")}
+              onClick={() => handleMenuSelect("settings", "Customize your OS to be your sactuary")}
             >
               SETTINGS
             </li>
@@ -91,24 +108,24 @@ function App() {
               className={`nav-option ${
                 mode == "memory" && "selected"
               } nav-option-ext`}
-              onClick={() => handleMenuSelect("memory")}
+              onClick={() => handleMenuSelect("memory", "Upload your music, games, avatars and pets!")}
             >
               MEM.CARD
             </li>
             <li
               className={`nav-option ${mode == "notepad" && "selected"}`}
-              onClick={() => handleMenuSelect("notepad")}
+              onClick={() => handleMenuSelect("notepad", "Leave yourself a note, I'll remember it for you")}
             >
               NOTEPAD
             </li>
             <div className="nav-menu-description">
-              This is a description of the highlighted menu option
+              {menuDesc}
             </div>
           </ul>
           <ul className="sub-menu">
             <li
               className={`nav-option ${mode == "credits" && "selected"}`}
-              onClick={() => handleMenuSelect("credits")}
+              onClick={() => handleMenuSelect("credits", "Please check out the original creators! I had fun remaking thier work!")}
             >
               CREDITS
             </li>
@@ -132,7 +149,7 @@ function App() {
             {mode == "games" ? <Games />: ""}
             {mode == "memory" ? <Memory />: ""}
             {mode == "settings" ? <Settings />: ""}
-            {mode == "notepad" ? <Notepad note={note} setNote={setNote} />: ""}
+            {mode == "notepad" ? <Notepad note={note} setNote={handleSetNote} />: ""}
             {mode == "credits" ? <Credits />: ""}
           </div>
         </div>
