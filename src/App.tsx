@@ -25,7 +25,7 @@ function App() {
   const { playerRef, showVideo, playing } = useVideoPlayer();
   const [mode, setMode] = useState("");
   const [note, setNote] = useState("");
-  const [menuDesc, setMenuDesc] = useState("Welcome to Sactuary OS!")
+  const [menuDesc, setMenuDesc] = useState("Welcome to Sactuary OS! Press play below to hear the music!")
   const [avatar, setAvatar] = useState("girl1");
   const [bg, setBg] = useState("/images/blue-sky.png")
 
