@@ -24,6 +24,7 @@ import Games from "./components/Games";
 function App() {
   const { playerRef, showVideo, playing } = useVideoPlayer();
   const [mode, setMode] = useState("");
+  const [note, setNote] = useState("");
 
   const handleMenuSelect = (option) => {
     if (mode == option) {
@@ -35,6 +36,9 @@ function App() {
 
   return (
     <div className="page">
+      <div className="background">
+        <img className="background-svg" src={background} width={"90%"} />
+      </div>
       <div className={`video-player ${showVideo ? "" : "hide"}`}>
         <ReactPlayer
           muted={false}
@@ -128,15 +132,13 @@ function App() {
             {mode == "games" ? <Games />: ""}
             {mode == "memory" ? <Memory />: ""}
             {mode == "settings" ? <Settings />: ""}
-            {mode == "notepad" ? <Notepad />: ""}
+            {mode == "notepad" ? <Notepad note={note} setNote={setNote} />: ""}
             {mode == "credits" ? <Credits />: ""}
           </div>
         </div>
       </div>
       <MediaControl player={playerRef} />
-      <div className="background">
-        <img className="background-svg" src={background} width={"90%"} />
-      </div>
+      
     </div>
   );
 }
