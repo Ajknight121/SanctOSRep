@@ -6,7 +6,7 @@ type Note = {
   body: string;
 }
 
-export default function Notepad() {
+export default function Notepad({note, setNote}) {
   const [notes, setNotes] = useState<Note[]>([])
   const [currentText, setCurrentText] = useState<string>("")
 
@@ -16,9 +16,9 @@ export default function Notepad() {
       <div className='section-container note-input-container'>
         <textarea 
           className='note-input' 
-          value={currentText}
+          value={note}
           placeholder='Leave a note!'
-          onChange={(e) => setCurrentText(e.target.value)}
+          onChange={(e) => setNote(e.target.value)}
         />
       </div>
     </div>
