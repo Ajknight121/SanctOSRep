@@ -70,11 +70,12 @@ function App() {
           url={"https://youtu.be/d3KfkKXRDzk"}
           width={"100%"}
           height={"100%"}
-          volume={0.06}
+          volume={0.8}
           controls={true}
           playing={playing}
           loop={true}
           ref={playerRef}
+          
         />
       </div>
 
