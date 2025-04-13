@@ -5,16 +5,16 @@ export default function Settings({avatar, setAvatar, bg, setBg}) {
   const [uiColor, setUiColor] = useState("white");
 
   const avatars = [
-    {label: "girl 1", value: "girl1"},
-    {label: "girl 2", value: "girl2"},
-    {label: "none", value: "none"},
-    {label: "him", value: "mrwashee"},
+    {label: "Girl 1", value: "girl1"},
+    {label: "Girl 2", value: "girl2"},
+    {label: "None", value: "none"},
+    {label: "Him", value: "mrwashee"},
   ]
   const background = [
     { label: 'Day', value: "/images/blue-sky.png" },
-    { label: 'aurora', value: "/images/aurora.jpg" },
+    { label: 'Aurora', value: "/images/aurora.jpg" },
     { label: 'Water', value: '/images/water.jpg' },
-    { label: 'unpleasant', value: '/images/unpleasant.png' }
+    { label: 'Unpleasant', value: '/images/unpleasant.png' }
   ]
 
   const ui = [
