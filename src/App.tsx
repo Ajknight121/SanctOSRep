@@ -9,16 +9,29 @@ import cloudCreatures from "./images/cloud-creatures.png";
 import bbHeadshot from "./images/bb-headshot.png";
 import ccHeadshot from "./images/cc-headshot.png";
 
-import { useContext, useRef } from "react";
+import { useContext, useRef, useState } from "react";
 import ReactPlayer from "react-player/youtube";
 import MediaControl from "./MediaControl";
-import {useVideoPlayer} from "./VideoContext";
+import { useVideoPlayer } from "./VideoContext";
 import React from "react";
 import TimeStamp from "./TimeStamp";
+import Notepad from "./components/Notepad";
+import Credits from "./components/Credits";
+import Settings from "./components/Settings";
+import Memory from "./components/Memory";
+import Games from "./components/Games";
 
 function App() {
-  
-  const {playerRef, showVideo, playing} = useVideoPlayer();
+  const { playerRef, showVideo, playing } = useVideoPlayer();
+  const [mode, setMode] = useState("");
+
+  const handleMenuSelect = (option) => {
+    if (mode == option) {
+      setMode("");
+    } else {
+      setMode(option);
+    }
+  };
 
   return (
     <div className="page">
@@ -58,31 +71,65 @@ function App() {
             <div className="sn-label">Select*</div>
           </div>
           <ul className="nav-menu">
-            <li className="nav-option">GAMES</li>
-            <li className="nav-option">SETTINGS</li>
-            <li className="nav-option nav-option-ext">MEM.CARD</li>
-            <li className="nav-option">NOTEPAD</li>
+            <li
+              className={`nav-option ${mode == "games" && "selected"}`}
+              onClick={() => handleMenuSelect("games")}
+            >
+              GAMES
+            </li>
+            <li
+              className={`nav-option ${mode == "settings" && "selected"}`}
+              onClick={() => handleMenuSelect("settings")}
+            >
+              SETTINGS
+            </li>
+            <li
+              className={`nav-option ${
+                mode == "memory" && "selected"
+              } nav-option-ext`}
+              onClick={() => handleMenuSelect("memory")}
+            >
+              MEM.CARD
+            </li>
+            <li
+              className={`nav-option ${mode == "notepad" && "selected"}`}
+              onClick={() => handleMenuSelect("notepad")}
+            >
+              NOTEPAD
+            </li>
             <div className="nav-menu-description">
               This is a description of the highlighted menu option
             </div>
           </ul>
           <ul className="sub-menu">
-            <li className="nav-option">CREDITS</li>
+            <li
+              className={`nav-option ${mode == "credits" && "selected"}`}
+              onClick={() => handleMenuSelect("credits")}
+            >
+              CREDITS
+            </li>
           </ul>
         </div>
-        <div className="creatures">
-          <div className="creature-headshots row">
-            <div className="creature-headshot">
-              <img src={bbHeadshot} />
-              <div className="creature-label">BB*</div>
-            </div>
-            <div className="creature-headshot">
-              <img src={ccHeadshot} />
-              <label className="creature-label">CC*</label>
+        <div className="side-section">
+          <div className="creatures">
+            <div className="creature-headshots row">
+              <div className="creature-headshot">
+                <img src={bbHeadshot} />
+                <div className="creature-label">BB*</div>
+              </div>
+              <div className="creature-headshot">
+                <img src={ccHeadshot} />
+                <div className="creature-label">CC*</div>
+              </div>
             </div>
           </div>
-          <div className="creature-large">
-            <img src={cloudCreatures} />
+          <div className="side-section-large">
+            {mode == "" ? (<img src={cloudCreatures} width={"100%"} height={"auto"}/>): ""}
+            {mode == "games" ? <Games />: ""}
+            {mode == "memory" ? <Memory />: ""}
+            {mode == "settings" ? <Settings />: ""}
+            {mode == "notepad" ? <Notepad />: ""}
+            {mode == "credits" ? <Credits />: ""}
           </div>
         </div>
       </div>

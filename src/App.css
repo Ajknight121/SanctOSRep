@@ -41,10 +41,14 @@ ul {
   right: 0;
 }
 
-.video-player.hide {
+.hide {
+  display: none;
+}
+
+/* .video-player.hide {
   pointer-events: none;
   opacity: 0;
-}
+} */
 
 
 
@@ -159,10 +163,9 @@ ul {
   z-index: 1;
 }
 
-.creatures {
+.side-section {
   width: 35%;
-
-  display: flex;
+  /* display: flex; */
   position: relative;
   flex-direction: column;
   color: var(--ui-secondary-dark);
@@ -173,10 +176,11 @@ ul {
 .creature-headshots {
   position: absolute;
   /* top: -200px; */
+  right: 0;
   top: -15vw;
   align-self: end;
   justify-self: end;
-  gap: 16px;
+  gap: 1.2vw;
 }
 
 .creature-headshot {
@@ -199,7 +203,7 @@ ul {
   font-weight: 600;
 }
 
-.creature-large {
+.side-section-large {
   width: 100%;
   height: 100%;
 }
@@ -210,10 +214,12 @@ ul {
 }
 
 .avatar-display {
+  position: relative;
+  top:-4vw;
   /* width: 320px; */
   width: 18.5%;
   /* height: 620px; */
-  height: 33vw;
+  height: 36vw;
   /* min-height: 600px; */
   background: rgb(130, 190, 227, 0.9);
   border-radius: var(--border-radius-med);
@@ -226,6 +232,7 @@ ul {
   text-wrap: nowrap;
   background: none;
   margin-left: 3vw;
+  height: 5%;
   color: var(--ui-primary-dark);
 }
 
@@ -271,6 +278,12 @@ ul {
   transition-duration: .5s;
 }
 
+.nav-option.selected {
+  background-color: aliceblue;
+}
+.nav-option.selected:hover {
+  background-color: aliceblue;
+}
 .nav-option:hover {
   background-color: var(--ui-hightlight-dark);
 }

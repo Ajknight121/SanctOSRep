@@ -103,7 +103,7 @@ export default function MediaControl() {
         return;
       }
       if (playerRef.current.player.isReady != false && !isDragging) {
-        console.log(playerRef.current);
+        // console.log(playerRef.current);
         // console.log(playerRef.current.player)
         const total = playerRef.current.getDuration();
         const current = playerRef.current.getCurrentTime();
