@@ -125,12 +125,16 @@ ul {
   display: flex;
   justify-content: center;
   margin: auto;
+  background-blend-mode: luminosity;
+  opacity: 0.85;
+  filter: drop-shadow(0px 0px 10.1px rgba(255, 255, 255, 0.50));
 }
 
 .header {
   /* height: 10vw; */
   width: 90%; /* was 60% of background ui */
   margin: auto;
+  filter: drop-shadow(0px 0px 10.1px rgba(255, 255, 255, 0.50))
 }
 
 .header-logo {
@@ -222,8 +226,9 @@ ul {
   top: clamp(-50px, -4vw, 10px);
   width: 18.5%;
   max-height: clamp(100px, 36vw, 100%);
-  background: rgb(130, 190, 227, 0.9);
+  background: rgba(57, 156, 227, 0.9);
   border-radius: var(--border-radius-med);
+  filter: drop-shadow(0px 0px 10.1px rgba(255, 255, 255, 0.50));
 }
 .avatar-wrapper {
   display: flex;
@@ -299,7 +304,7 @@ ul {
 }
 
 .nav-option.selected {
-  background-color: aliceblue;
+  background-color: rgba(240, 248, 255,.9);
 }
 .nav-option.selected:hover {
   background-color: aliceblue;
