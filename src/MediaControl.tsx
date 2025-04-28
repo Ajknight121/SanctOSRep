@@ -151,11 +151,11 @@ export default function MediaControl() {
         ></div>
       </div>
       <div className="media-toggles">
-        <button className="toggle-play" onClick={handlePlayToggle}>
+        <button className={`toggle-play ${playing ? "": "highlight"}`} onClick={handlePlayToggle}>
           {playing == true ? "Pause" : "Play"}
         </button>
-        <button className="toggle-play" onClick={handleShowPlayer}>
-          {showVideo == true ? "Hide" : "Show"}
+        <button className="toggle-show" onClick={handleShowPlayer}>
+          {showVideo == true ? "Hide Original" : "Show Original"}
         </button>
       </div>
     </div>

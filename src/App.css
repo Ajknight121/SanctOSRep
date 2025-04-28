@@ -78,6 +78,7 @@ ul {
 .media-toggles {
   display: flex;
   margin-top: 10px;
+  gap: 10px;
 }
 
 .timestamp {
@@ -127,14 +128,14 @@ ul {
   margin: auto;
   background-blend-mode: luminosity;
   opacity: 0.85;
-  filter: drop-shadow(0px 0px 10.1px rgba(255, 255, 255, 0.50));
+  filter: drop-shadow(0px 0px 10.1px rgba(255, 255, 255, 0.5));
 }
 
 .header {
   /* height: 10vw; */
   width: 90%; /* was 60% of background ui */
   margin: auto;
-  filter: drop-shadow(0px 0px 10.1px rgba(255, 255, 255, 0.50))
+  filter: drop-shadow(0px 0px 10.1px rgba(255, 255, 255, 0.5));
 }
 
 .header-logo {
@@ -228,7 +229,7 @@ ul {
   max-height: clamp(100px, 36vw, 100%);
   background: rgba(57, 156, 227, 0.9);
   border-radius: var(--border-radius-med);
-  filter: drop-shadow(0px 0px 10.1px rgba(255, 255, 255, 0.50));
+  filter: drop-shadow(0px 0px 10.1px rgba(255, 255, 255, 0.5));
 }
 .avatar-wrapper {
   display: flex;
@@ -289,22 +290,27 @@ ul {
 }
 
 .nav-option {
+  font-family: Oxanium;
   position: relative;
-  height: clamp(1.2rem, 4vw, 2.6rem);
+  height: clamp(1rem, 4vw, 2.6rem);
   width: 59%;
-  margin-bottom: 2%;
+  margin-bottom: 3%;
   font-size: clamp(1rem, 3vw, 2rem);
-  font-weight: bold;
+  font-weight: 700;
+  letter-spacing: clamp(-3.5px, -0.5vw, 10px);
+  line-height: 190%;
+  font-size: clamp(0.7rem, 3vw, 1.8rem);
   list-style: none;
-  border: 2px solid rgb(150, 160, 230, 80);
+  border: 1.5px solid rgb(150, 160, 230, 80);
   border-radius: clamp(1px, 1.2vw, 12px);
   color: var(--ui-font-color);
   cursor: pointer;
   transition-duration: 0.5s;
+  box-shadow: 0px 1px 3px -1px rgba(18, 25, 164, 0.75);
 }
 
 .nav-option.selected {
-  background-color: rgba(240, 248, 255,.9);
+  background-color: rgba(240, 248, 255, 0.9);
 }
 .nav-option.selected:hover {
   background-color: aliceblue;
@@ -359,3 +365,26 @@ ul {
     animation: logo-spin infinite 20s linear;
   }
 } */
+
+.media-toggles > button {
+  background-color: #002563;
+  color: white;
+}
+
+.toggle-play.highlight {
+  background-image: linear-gradient(45deg, #002563, #6bcde6, #399ce3, #002563);
+  background-size: 200% 110%;
+  animation: gradientShift 10s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

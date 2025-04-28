@@ -67,7 +67,7 @@ function App() {
       <div className={`video-player ${showVideo ? "" : "hide"}`}>
         <ReactPlayer
           muted={false}
-          url={"https://youtu.be/d3KfkKXRDzk"}
+          url={"https://youtu.be/d3KfkKXRDzk?t=153"}
           width={"100%"}
           height={"100%"}
           volume={0.8}
