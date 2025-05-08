@@ -11,7 +11,7 @@ export default function Notepad({note, setNote}: {note:string, setNote: (value:s
         <textarea 
           className='note-input' 
           value={note}
-          placeholder='Leave a note!'
+          placeholder='Click here to leave a note!'
           onChange={(e) => setNote(e.target.value)}
         />
       </div>

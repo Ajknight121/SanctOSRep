@@ -3,9 +3,9 @@ import "./App.css";
 import logoColon from "/images/Logo-colon.svg";
 import logoTitle from "/images/LogoTitle.svg";
 import background from "/images/ui-background.svg";
-import cloudCreatures from "/images/cloud-creatures.png";
-import bbHeadshot from "/images/bb-headshot.png";
-import ccHeadshot from "/images/cc-headshot.png";
+import cloudCreatures from "/images/cloud-creatures-bg-bright.png";
+import bbHeadshot from "/images/bb-headshot-bg-bright.png";
+import ccHeadshot from "/images/cc-headshot-bg-bright.png";
 
 import { useEffect, useState } from "react";
 import ReactPlayer from "react-player/youtube";
@@ -20,6 +20,14 @@ import Games from "./components/Games";
 import mrWashee from "/images/Mr._Washee_Washee.png";
 import girl1 from "/images/girl1.png"
 import girl2 from "/images/girl2.png"
+
+import SnakeFlair from "/images/SnakeFlair.svg";
+import AFlair from "/images/AFlair.svg";
+import Barcode from "/images/Memory Card barcode.svg";
+import MenuFlair from "/images/MenuHeadFlair.svg";
+import settingsBarcode from "/images/settingsBarcode.svg";
+import usa from "/images/USA.svg";
+import A1 from "/images/A1.svg";
 
 function App() {
   const { playerRef, showVideo, playing } = useVideoPlayer();
@@ -118,6 +126,7 @@ function App() {
             >
               SETTINGS
             </li>
+            <img src={settingsBarcode} className="flair-settings-barcode"/>
             <li
               className={`nav-option ${
                 mode == "memory" && "selected"
@@ -128,7 +137,7 @@ function App() {
             </li>
             <li
               className={`nav-option ${mode == "notepad" && "selected"}`}
-              onClick={() => handleMenuSelect("notepad", "Leave yourself a note, I'll remember it for you")}
+              onClick={() => handleMenuSelect("notepad", "Leave yourself a note, I'll remember it for you!")}
             >
               NOTEPAD
             </li>
@@ -167,6 +176,14 @@ function App() {
             {mode == "credits" ? <Credits />: ""}
           </div>
         </div>
+        <img src={SnakeFlair} className="flair-snake"/>
+      <img src={AFlair} className="flair-a"/>
+      <img src={Barcode} className="flair-bottom-barcode"/>
+      <img src={Barcode} className="flair-side-barcode"/>
+      <img src={A1} className="flair-a1"/>
+      
+      <img src={usa} className="flair-usa"/>
+      <img src={MenuFlair} className="flair-menu"/>
       </div>
       <MediaControl />
       
