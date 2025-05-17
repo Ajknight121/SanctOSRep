@@ -45,7 +45,7 @@ function App() {
   }, [])
 
   const handleSetAvatar = (choice:string) => {
-    console.log(choice)
+    // console.log(choice)
     setAvatar(choice);
   }
 

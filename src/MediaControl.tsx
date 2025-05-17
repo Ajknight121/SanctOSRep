@@ -48,7 +48,7 @@ export default function MediaControl() {
         }
         // console.log(hours, minutes, seconds);
         // console.log(duration);
-        // console.log(sanctuaryTimestamps)
+        console.log(sanctuaryTimestamps)
         const totalSeconds = hours * 3600 + minutes * 60 + seconds;
 
         return {
@@ -56,7 +56,7 @@ export default function MediaControl() {
           name: name.trim(),
         };
       });
-      console.log(stamps);
+      // console.log(stamps);
       setTimestamps(stamps);
     };
 
@@ -93,7 +93,7 @@ export default function MediaControl() {
       // Update the player time based on the click position
       const currentTime = (mousePercent / 100) * duration;
       playerRef.current.seekTo(currentTime);
-      console.log("set");
+      // console.log("set");
       // Update the progress state
       setCurrentProgress(mousePercent);
     }

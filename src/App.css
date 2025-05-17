@@ -150,10 +150,10 @@ ul {
 
 .logo-os {
   position: relative;
-  top: 1vw;
+  top: clamp(0px, 1vw, 10px);
 }
 .header-title-group {
-  margin-top: calc(-3% + 1vw);
+  margin-top: clamp(-9px, -0.8vw, 0px);
 }
 
 .header-route {
