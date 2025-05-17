@@ -153,7 +153,7 @@ ul {
   top: clamp(0px, 1vw, 10px);
 }
 .header-title-group {
-  margin-top: clamp(-5px, -0.8vw, 0px);
+  margin-top: clamp(-15px, -1.8vw, 0px);
   /* margin-top: -5px; */
 }
 
@@ -439,14 +439,14 @@ ul {
 .flair-bottom-barcode {
   position: absolute;
   left: 52.3%;
-  bottom: 4.6%;
+  bottom: 2.6%;
   width: 22%;
   filter: drop-shadow(0px 0px 10.1px rgba(255, 255, 255, 0.5));
 }
 .flair-side-barcode {
   position: absolute;
   right: -1.6%;
-  bottom: 99%;
+  bottom: 96%;
   width: 16%;
   transform: rotate(-90deg);
   filter: drop-shadow(0px 0px 10.1px rgba(255, 255, 255, 0.5));
