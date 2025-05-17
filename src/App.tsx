@@ -70,7 +70,7 @@ function App() {
   return (
     <div style={{backgroundImage: `url(${bg})`}} className="page">
       <div className="background">
-        <img className="background-svg" src={background} width={"90%"} />
+        <img rel="preload" className="background-svg" src={background} width={"90%"} />
       </div>
       <div className={`video-player ${showVideo ? "" : "hide"}`}>
         <ReactPlayer
@@ -89,8 +89,8 @@ function App() {
 
       <div className="header col">
         <div className="header-logo">
-          <img src={logoColon} width={"33%"} />
-          <img className="logo-os" src={logoTitle} width={"66%"} height={"120%"} />
+          <img rel="preload" src={logoColon} width={"33%"} />
+          <img rel="preload" className="logo-os" src={logoTitle} width={"66%"} height={"120%"} />
           {/* <h1>DUSQK:</h1> */}
         </div>
 
@@ -103,9 +103,9 @@ function App() {
       <div className="content row">
         <div className="avatar-display">
           <div className="avatar-wrapper">
-            {avatar == "mrwashee" ? <img className="avatar" src={mrWashee} /> : ""}
-            {avatar == "girl1" ? <img className="avatar" src={girl1} /> : ""}
-            {avatar == "girl2" ? <img className="avatar" src={girl2} /> : ""}
+            {avatar == "mrwashee" ? <img rel="preload" className="avatar" src={mrWashee} /> : ""}
+            {avatar == "girl1" ? <img rel="preload" className="avatar" src={girl1} /> : ""}
+            {avatar == "girl2" ? <img rel="preload" className="avatar" src={girl2} /> : ""}
           </div>
         </div>
         <div className="menu col">
@@ -126,7 +126,7 @@ function App() {
             >
               SETTINGS
             </li>
-            <img src={settingsBarcode} className="flair-settings-barcode"/>
+            <img rel="preload" src={settingsBarcode} className="flair-settings-barcode"/>
             <li
               className={`nav-option ${
                 mode == "memory" && "selected"
@@ -158,17 +158,17 @@ function App() {
           <div className="creatures">
             <div className="creature-headshots row">
               <div className="creature-headshot">
-                <img src={bbHeadshot} />
+                <img rel="preload" src={bbHeadshot} />
                 <div className="creature-label">BB*</div>
               </div>
               <div className="creature-headshot">
-                <img src={ccHeadshot} />
+                <img rel="preload" src={ccHeadshot} />
                 <div className="creature-label">CC*</div>
               </div>
             </div>
           </div>
           <div className="side-section-large">
-            {mode == "" ? (<img src={cloudCreatures} width={"100%"} height={"auto"}/>): ""}
+            {mode == "" ? (<img rel="preload" src={cloudCreatures} width={"100%"} height={"auto"}/>): ""}
             {mode == "games" ? <Games />: ""}
             {mode == "memory" ? <Memory />: ""}
             {mode == "settings" ? <Settings avatar={avatar} setAvatar={handleSetAvatar} bg={bg} setBg={setBg}/>: ""}
@@ -176,14 +176,14 @@ function App() {
             {mode == "credits" ? <Credits />: ""}
           </div>
         </div>
-        <img src={SnakeFlair} className="flair-snake"/>
-      <img src={AFlair} className="flair-a"/>
-      <img src={Barcode} className="flair-bottom-barcode"/>
-      <img src={Barcode} className="flair-side-barcode"/>
-      <img src={A1} className="flair-a1"/>
+        <img rel="preload" src={SnakeFlair} className="flair-snake"/>
+      <img rel="preload" src={AFlair} className="flair-a"/>
+      <img rel="preload" src={Barcode} className="flair-bottom-barcode"/>
+      <img rel="preload" src={Barcode} className="flair-side-barcode"/>
+      <img rel="preload" src={A1} className="flair-a1"/>
       
-      <img src={usa} className="flair-usa"/>
-      <img src={MenuFlair} className="flair-menu"/>
+      <img rel="preload" src={usa} className="flair-usa"/>
+      <img rel="preload" src={MenuFlair} className="flair-menu"/>
       </div>
       <MediaControl />
       

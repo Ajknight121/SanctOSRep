@@ -60,7 +60,7 @@ ul {
   position: absolute;
   z-index: 10;
   bottom: -70px;
-  width: 100%;
+  width: 95%;
   flex-shrink: none;
   margin-top: 50px;
 }
