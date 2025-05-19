@@ -371,6 +371,7 @@ ul {
   width: 59%;
   height: clamp(10px, 2vw, 30px);
   font-size: clamp(5px, 1vw, 10px);
+  font-weight: 600;
   color: var(--ui-primary-dark);
 }
 
